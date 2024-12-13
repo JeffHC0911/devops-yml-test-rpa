@@ -1,0 +1,17 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta en cada push a la rama "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Máquina virtual de Ubuntu para ejecutar el workflow
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Descarga el código del repositorio
+
+      - name: Print a message
+        run: echo "Hello! This workflow ran successfully on a push to the main branch."
